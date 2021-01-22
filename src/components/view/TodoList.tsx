@@ -7,7 +7,7 @@ export const TodoList: ({
   onTodoClick,
 }: {
   todos: ITodoObject[];
-  onTodoClick: (index: number) => any;
+  onTodoClick: (index: number) => void;
 }) => JSX.Element = ({ todos, onTodoClick }) => (
   <ul>
     {todos.map((todo, index) => (

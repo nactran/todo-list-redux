@@ -7,8 +7,9 @@ export const Link = ({
 }: {
   active: boolean;
   children: ReactNode;
-  onClick: (...args: any[]) => any;
+  onClick: () => void;
 }): JSX.Element => {
+  console.log(children);
   if (active) {
     return <span>{children}</span>;
   }
