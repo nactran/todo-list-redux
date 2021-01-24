@@ -1,2 +1,3 @@
 # todo-list-redux
-Demo. React + Redux + TypeScript
+
+Demo. React + Redux + React-router + TypeScript
