@@ -25,7 +25,10 @@ const mapStateToProps = (
     todos: getVisibleTodos(state.todos, state.visibilityFilter),
   };
 };
-
+//If it’s a function, it will be called once on component creation.
+//It will receive dispatch as an argument,
+//and should return an object full of functions
+//that use dispatch to dispatch actions.
 const mapDispatchToProps = (
   dispatch: (action: { type: string; index: number }) => void
 ): { onTodoClick: (id: number) => void } => {
@@ -35,5 +38,8 @@ const mapDispatchToProps = (
     },
   };
 };
-
+//This is what React Redux’s connect does
+//— it encapsulates the logic of talking to the Redux store
+// and lets you not worry about it.
+// 沟通视图层和store
 export const VisibleTodoList = connect(mapStateToProps, mapDispatchToProps)(TodoList);

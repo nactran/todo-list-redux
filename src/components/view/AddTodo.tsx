@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { addTodo } from 'Utils/actions';
 
 let AddTodo = ({ dispatch }) => {
+  //call back ref
+  //适用于早期版本的 react 
   let input;
 
   return (

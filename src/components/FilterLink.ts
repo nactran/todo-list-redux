@@ -17,12 +17,16 @@ const mapDispatchToProps = (
   dispatch: (action: { type: string; filter: string }) => void,
   ownProps: { filter: string }
 ): { onClick: () => void } => {
+  //should return an object full of functions
+  //that use dispatch to dispatch actions.
   return {
     onClick: (): void => {
-      console.log('dispatch an action:' + ownProps.filter);
+      //console.log('dispatch an action:' + ownProps.filter);
       dispatch(setVisibilityFilter(ownProps.filter));
     },
   };
 };
-
+//connect can accept an argument called mapDispatchToProps,
+//which lets you create functions that dispatch when called,
+//and pass those functions as props to your component.
 export const FilterLink = connect(mapStateToProps, mapDispatchToProps)(Link);
