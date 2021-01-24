@@ -21,7 +21,7 @@ export const Link = ({
       href=""
       onClick={function (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void {
         e.preventDefault();
-        console.log('Link ' + children + ' Clicked!');
+        //console.log('Link ' + children + ' Clicked!');
         onClick();
       }}>
       {children}

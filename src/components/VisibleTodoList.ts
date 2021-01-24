@@ -17,12 +17,12 @@ const getVisibleTodos = (todos: ITodoObject[], filter: string): ITodoObject[] =>
 };
 //如何把当前 Redux store state 映射到展示组件的 props 中
 const mapStateToProps = (
-  state: { todos: ITodoObject[]; visibilityFilter: string }
-  //ownProps: any
+  state: { todos: ITodoObject[]; visibilityFilter: string },
+  ownProps: { filter: string }
 ): { todos: ITodoObject[] } => {
   return {
     //根据 state 中 visibilityFilter 的情况获取 todo 列表
-    todos: getVisibleTodos(state.todos, state.visibilityFilter),
+    todos: getVisibleTodos(state.todos, ownProps.filter),
   };
 };
 //If it’s a function, it will be called once on component creation.
